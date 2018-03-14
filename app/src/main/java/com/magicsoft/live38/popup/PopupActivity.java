@@ -8,8 +8,14 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.magicsoft.live38.R;
+import com.magicsoft.mylibrary.PopupOOBtn;
+import com.magicsoft.mylibrary.PopupOTBtn;
+import com.magicsoft.mylibrary.PopupTOBtn;
+import com.magicsoft.mylibrary.PopupTTBtn;
+import com.magicsoft.mylibrary.PopupUtils;
 
 /**
  * @author : Lss winding
@@ -34,12 +40,45 @@ public class PopupActivity extends AppCompatActivity {
 
     }
 
+    /**通用一个标题,一个按钮
+     * @param view
+     */
     public void oneOneListener(View view) {
+        PopupOOBtn popupOOBtn = new PopupOOBtn(this, new PopupOOBtn.BtnClick() {
+            @Override
+            public void sureClickListener(PopupOOBtn popupOOBtn) {
+                //点击回调
+                Toast.makeText(PopupActivity.this, "click", Toast.LENGTH_SHORT).show();
+                popupOOBtn.dismiss();
+            }
+        });
+        //设置标题,标题颜色(0默认为黑色);字体是否加粗
+        popupOOBtn.setTitleAndColor("设置标题",0,false)
+                .setRadius(2)//设置对话框圆角弧度
+                //设置按钮文字内容,文字颜色,背景颜色(0都是默认颜色);
+        .setSureTextAndColor("按钮",0,0)
+                //.setAnimationStyle(R.style.contextMenuAnim);//设置对话框进出动画
+        //设置展示在中间
+        .showCenter(this);
+        //popupOOBtn.showBottom(this);设置在底部等
 
     }
 
+    /**通用两个标题,一个按钮
+     * @param view
+     */
     public void twoOneListener(View view) {
-
+        new PopupTOBtn(this, new PopupTOBtn.BtnClick() {
+            @Override
+            public void sureClickListener(PopupTOBtn popupTOBtn) {
+                Toast.makeText(PopupActivity.this, "确定点击", Toast.LENGTH_SHORT).show();
+                popupTOBtn.dismiss();
+            }
+        })
+                .setHint("设置提示标题",0,true)
+                .setTitle("标题内容内容内容内容",R.color.colorAccent,false)
+                .setSureTextAndColor("确定点击",R.color.colorAccent,R.color.colorPrimaryDark)
+                .showCenter(this);
     }
 
     /**一般样式对话框点击
@@ -123,4 +162,57 @@ public class PopupActivity extends AppCompatActivity {
         popupWindow.showAsDropDown(mBtnMenu);
 
     }
+
+    /**通用一个标题,两个按钮
+     * @param view
+     */
+    public void oneTwoListener(View view) {
+        new PopupOTBtn(this, new PopupOTBtn.ContentClickListener() {
+            @Override
+            public void sureClickListener(PopupOTBtn popupOTBtn) {
+                Toast.makeText(PopupActivity.this, "确定监听", Toast.LENGTH_SHORT).show();
+                popupOTBtn.dismiss();
+            }
+
+            @Override
+            public void cancelClickListener() {
+                Toast.makeText(PopupActivity.this, "取消监听", Toast.LENGTH_SHORT).show();
+            }
+        })
+                .setTitleAndColor("设置标题",0,true)
+                .showCenter(this);
+    }
+
+    /**两个标题,两个按钮
+     * @param view
+     */
+    public void twoTwoListener(View view) {
+        new PopupTTBtn(this, new PopupTTBtn.ContentTClickListener() {
+            @Override
+            public void sureClickListener(PopupTTBtn popupTTBtn) {
+                Toast.makeText(PopupActivity.this, "确定", Toast.LENGTH_SHORT).show();
+                popupTTBtn.dismiss();
+            }
+
+            @Override
+            public void cancelClickListener() {
+                Toast.makeText(PopupActivity.this, "取消", Toast.LENGTH_SHORT).show();
+            }
+        }).setTitle("标题",0,false)
+                .showCenter(this);
+    }
+
+    /**自定义界面
+     * @param view
+     */
+    public void customUiListener(View view) {
+        PopupUtils popupUtils = new PopupUtils(this, R.layout.pw_normal);
+        //获取控件
+        View btnClick = popupUtils.getItemView(R.id.btn_pw_normal_click);
+        popupUtils.showCenter(this);
+
+        //popupUtils.showAsDropDown(view);
+    }
+
+
 }

@@ -43,4 +43,6 @@ dependencies {
     implementation files('libs/vcloudUpload.jar')
     implementation files('libs/VideoEffect_v2.2.0.jar')
     implementation files('libs/zxing-core-3.2.1.jar')
+
+    compile 'com.github.KiWiLss:PopupUtils:1.0.0'
 }

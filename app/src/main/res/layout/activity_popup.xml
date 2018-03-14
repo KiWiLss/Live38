@@ -21,7 +21,11 @@
         android:layout_height="wrap_content"
         android:text="常用1个标题,1个按钮"
         android:onClick="oneOneListener"/>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="常用1个标题,2个按钮"
+        android:onClick="oneTwoListener"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -30,7 +34,15 @@
         android:onClick="twoOneListener"/>
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="常用2个标题,2个按钮"
+        android:onClick="twoTwoListener"/>
 
-
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义布局"
+        android:onClick="customUiListener"/>
 </LinearLayout>
