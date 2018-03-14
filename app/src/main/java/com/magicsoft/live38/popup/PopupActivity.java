@@ -11,6 +11,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.magicsoft.live38.R;
+import com.magicsoft.live38.widget.CustomPw;
 import com.magicsoft.mylibrary.PopupOOBtn;
 import com.magicsoft.mylibrary.PopupOTBtn;
 import com.magicsoft.mylibrary.PopupTOBtn;
@@ -218,6 +219,15 @@ public class PopupActivity extends AppCompatActivity {
      * @param view
      */
     public void dialogUseListener(View view) {
+        CustomPw customPw = new CustomPw(this, null);
+        customPw.showCenter(this);
+    }
 
+    /**库的带背景的菜单
+     * @param view
+     */
+    public void menuPopupListener(View view) {
+        CustomPw customPw = new CustomPw(this, null);
+        customPw.showAsDropDown(view);
     }
 }

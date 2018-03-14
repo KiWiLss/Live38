@@ -1,54 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="一般popupwindow"
-        android:onClick="popupListener"/>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_popup_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="菜单样式"
-        android:onClick="menuListener"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一般popupwindow"
+            android:onClick="popupListener"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="常用1个标题,1个按钮"
-        android:onClick="oneOneListener"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="常用1个标题,2个按钮"
-        android:onClick="oneTwoListener"/>
+        <Button
+            android:id="@+id/btn_popup_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="菜单样式"
+            android:onClick="menuListener"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="常用2个标题,1个按钮"
-        android:onClick="twoOneListener"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="常用1个标题,1个按钮"
+            android:onClick="oneOneListener"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="常用1个标题,2个按钮"
+            android:onClick="oneTwoListener"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="常用2个标题,1个按钮"
+            android:onClick="twoOneListener"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="常用2个标题,2个按钮"
-        android:onClick="twoTwoListener"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="常用2个标题,2个按钮"
+            android:onClick="twoTwoListener"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="自定义布局"
-        android:onClick="customUiListener"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义布局"
+            android:onClick="customUiListener"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="对话框复用"
-        android:onClick="dialogUseListener"/>
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="对话框复用"
+            android:onClick="dialogUseListener"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作为菜单使用,有背景"
+            android:onClick="menuPopupListener"/>
+    </LinearLayout>
+
+</ScrollView>
