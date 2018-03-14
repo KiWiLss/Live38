@@ -17,6 +17,7 @@ import com.magicsoft.mylibrary.PopupOTBtn;
 import com.magicsoft.mylibrary.PopupTOBtn;
 import com.magicsoft.mylibrary.PopupTTBtn;
 import com.magicsoft.mylibrary.PopupUtils;
+import com.magicsoft.mylibrary.PopupWindowUtils;
 
 /**
  * @author : Lss winding
@@ -229,5 +230,19 @@ public class PopupActivity extends AppCompatActivity {
     public void menuPopupListener(View view) {
         CustomPw customPw = new CustomPw(this, null);
         customPw.showAsDropDown(view);
+    }
+
+    /**按键左侧菜单进入
+     * @param view
+     */
+    public void leftMenuListener(View view) {
+        PopupWindowUtils popupWindowUtils = new PopupWindowUtils(view);
+
+        //设置展示的菜单
+        popupWindowUtils.setContentView(R.layout.pw_normal);
+        //展示,左侧进入
+        popupWindowUtils.showLikePopDownLeftMenu();
+        //获取控件
+        View btnClick = popupWindowUtils.findId(R.id.btn_pw_normal_click);
     }
 }

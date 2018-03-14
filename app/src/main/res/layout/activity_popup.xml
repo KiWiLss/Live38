@@ -63,6 +63,14 @@
             android:layout_height="wrap_content"
             android:text="作为菜单使用,有背景"
             android:onClick="menuPopupListener"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="菜单左侧进入"
+            android:onClick="leftMenuListener"
+            android:layout_gravity="end"/>
+
     </LinearLayout>
 
 </ScrollView>
