@@ -211,7 +211,6 @@ public class PopupActivity extends AppCompatActivity {
         View btnClick = popupUtils.getItemView(R.id.btn_pw_normal_click);
         popupUtils.showCenter(this);
 
-        //popupUtils.showAsDropDown(view);
     }
 
 
