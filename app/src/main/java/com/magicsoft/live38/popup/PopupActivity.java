@@ -229,17 +229,19 @@ public class PopupActivity extends AppCompatActivity {
      */
     public void menuPopupListener(View view) {
         CustomPw customPw = new CustomPw(this, null);
+        //在最后展示时,调用此方法可作为菜单样式使用
         customPw.showAsDropDown(view);
     }
 
     /**按键左侧菜单进入
+     * 类似的还有右侧进入的等
      * @param view
      */
     public void leftMenuListener(View view) {
         PopupWindowUtils popupWindowUtils = new PopupWindowUtils(view);
 
         //设置展示的菜单
-        popupWindowUtils.setContentView(R.layout.pw_normal);
+        popupWindowUtils.setContentView(R.layout.pw_normal2);
         //展示,左侧进入
         popupWindowUtils.showLikePopDownLeftMenu();
         //获取控件
