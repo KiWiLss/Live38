@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.magicsoft.live38">
 
+    <!--读取通讯录-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--读取通话记录-->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
 
 
     <!-- 权限声明 -->
@@ -70,7 +78,20 @@
 
         <activity android:name=".VideoViewActivity"/>
         <activity android:name=".popup.PopupActivity"/>
+        <activity android:name=".broad.BroadActivity"/>
 
+        <activity android:name=".activity.MiUiActivity"/>
+
+        <!--适配7.0 start-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="TianLangPark"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

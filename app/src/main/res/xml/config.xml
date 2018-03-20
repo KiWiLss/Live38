@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget
+    id="com.duanlu.cordovademo"
+    version="1.0.0">
+    <!-- 插件描述 -->
+    <feature name="Whitelist">
+        <param
+            name="android-package"
+            value="com.tianlang.park.plugin.WhitelistPlugin" />
+        <param
+            name="onload"
+            value="true" />
+    </feature>
+
+    <!--feature name js中间件通过它调用java方法-->
+    <!--<param-->
+    <!--name="android-package"-->
+    <!--value="原生插件类的包路径" />-->
+    <feature name="Demo">
+        <param
+            name="android-package"
+            value="com.tianlang.park.plugin.OpenOriginalActivityPlugin" />
+    </feature>
+    <!-- APP名称 -->
+    <name>CordovaDemo</name>
+    <!-- APP描述 -->
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <!-- 作者信息描述 -->
+    <author
+        email="dev@cordova.apache.org"
+        href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <!-- 默认启动页面 -->
+    <content src="index.html" />
+    <!-- 指定app可进行通信的域名，*为所有 -->
+    <access origin="*" />
+    <!-- App默认只请允许通过手机端直接打开，若想通过网站，SMS等方式调用APP，则需要设置allow-intent配置 -->
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <!--设置运行环境中的参数值  -->
+    <preference
+        name="loglevel"
+        value="DEBUG" />
+
+</widget>

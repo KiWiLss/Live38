@@ -45,4 +45,6 @@ dependencies {
     implementation files('libs/zxing-core-3.2.1.jar')
 
     compile 'com.github.KiWiLss:PopupUtils:1.0.0'
+    //汉子转拼音工具
+    compile 'com.belerweb:pinyin4j:2.5.1'
 }
